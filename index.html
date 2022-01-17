@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel = "icon" href = "assets/favicon.svg" type = "image/x-icon">
+    <title>Document</title>
+    <script src="app.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <div class="addTaskWindow hide">
+
+            <form class="addForm">
+                <input type="text" name="inputTask" required class="inputTask" placeholder="Title...">
+                <textarea class="taskArea" rows="5" placeholder="Description..." required></textarea>
+                <div class="div" style="display: flex; justify-content: space-evenly;">
+                    <input type="date" class="startDate" name="start" max="2023-12-31" required>
+                    <input type="date" class="finishDate" name="finish" max="2023-12-31" required>   
+                </div>
+                
+                <input type="submit" value="✔SAVE" class="addButton">
+                <input type="button" value="CANCEL" class="cancel">
+            </form>
+            
+        </div>
+
+        <div class="main-window">        
+            <div class="logo"><img src="assets/add.svg" id="addLogo">TODO`me</div>
+            <div class="listTasks">
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>

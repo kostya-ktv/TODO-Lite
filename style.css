@@ -1,0 +1,227 @@
+@font-face {
+    font-family: Ubuntu;
+    src: url(assets/Ubuntu_Mono/UbuntuMono-Regular.ttf);
+}
+:root {
+    --ubuntuDark: #252421;
+    --ubuntuGray: #44423f;
+    --ubuntuLightGray: #817d78;
+    --ubuntuOrange: #E45C2C;
+    --ubuntuWhite: #F2F1EF;
+    --fontColor: #afaca9;
+    --inProgress: rgb(155, 75, 69);
+    --complete: yellowgreen;
+  }
+* {
+    font-family: Ubuntu;
+    margin: 0;
+    padding: 0;
+    box-sizing: 0;
+}
+
+body {
+    background-color: var(--ubuntuDark);
+    width: 100vw;
+    height: 100vh;
+}
+.container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+}
+.logo {
+    display: flex;
+    padding: 3%;
+    justify-content: space-between;
+    font-size: 40px;
+    font-weight: bold;
+    color: var(--fontColor);
+    text-align: center;
+}
+#addLogo {
+    width: 10%;
+}
+#addLogo:hover {
+    transition: 0.5s;
+    transform: scale(1.31);
+    cursor: pointer;
+}
+.main-window {
+    padding: 10px;
+    z-index: 0;
+    position: relative;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    height: auto;
+    width: 400px;
+    background-color: var(--ubuntuGray);
+    border-radius: 10px;
+    border: 2px solid rgb(87, 82, 82);
+    box-shadow: 0px 10px 70px black;
+}
+.taskArea{
+    margin: 10px;
+    background-color: var(--fontColor);
+    color: var(--ubuntuDark);
+    padding: 10px;
+    border: 0px;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: bold;
+    width: 80%;
+}
+
+.addTaskWindow {
+    padding: 5px;
+    z-index: 1;
+    top: 30%;
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
+    width: 450px;
+    height: auto;
+    border-radius: 10px;
+    border: 2px solid rgb(155, 146, 146);
+    background-color: var(--ubuntuLightGray);
+    animation: slideDown 0.5s ease-out;
+}
+.addTaskWindow form {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.addTaskWindow .inputTask {
+    margin: 10px;
+    padding: 10px;
+    height: 60%;
+    width: 80%;
+    border-radius: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    border: 0px;
+    background-color: var(--fontColor);
+    color: var(--ubuntuDark);
+}
+.addTaskWindow {
+    font-size: 40px;
+    padding: 10px;
+    border: none;
+    background-color: var(--ubuntuLightGray);
+    border-radius: 50px;
+}
+.finishDate, .startDate {
+    padding: 5px;
+    margin: 20px;
+    color: rgb(77, 75, 75);
+    font-size: 20px;
+    border-radius: 10px;
+    border: 1px solid var(--ubuntuDark);
+    background-color: var(--ubuntuLightGray);
+}
+.addButton {
+    border: 2px solid var(--ubuntuDark);
+    border-radius: 40px;
+    padding: 10px;
+    color: var(--ubuntuDark);
+    font-size: 20px;
+    background-color: var(--complete);
+  
+}
+.addButton:hover{
+    font-weight: bold;
+    cursor: pointer;
+    color: var(--ubuntuWhite);
+    background-color: rgb(115, 151, 41);
+}
+.cancel {
+    margin: 5px;
+    border: 2px solid var(--ubuntuDark);
+    border-radius: 40px;
+    padding: 10px;
+    color: var(--fontColor);
+    font-size: 20px;
+    background-color: var(--ubuntuOrange);
+}
+.cancel:hover {
+    cursor: pointer;
+    background-color: rgb(184, 89, 0);
+    color: var(--ubuntuWhite)
+}
+
+.task {
+    text-align: center; 
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    border-radius: 20px;
+    margin: 10px;
+    padding: 10px;
+    background-color: var(--inProgress);
+}
+.task:hover {
+    cursor: pointer;
+    border: 3px solid var(--ubuntuDark); 
+}
+.hide {
+    display: none;
+}
+.complete {
+    background-color: var(--complete);
+    text-decoration: line-through;
+}
+.passed {
+    background-color: #6495ED;
+}
+.deleteButton {
+    text-align: center;
+    position: relative;
+    height: 22px;
+    width: 22px;
+    border: 1px solid var(--ubuntuDark);
+    border-radius: 10px;
+    font-size: 15px;
+    color: var(--ubuntuDark);
+    background-color: var(--ubuntuOrange);
+}
+.deleteButton:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+    background-color: rgb(197, 189, 186);
+}
+.deleteModalWindow {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;  
+
+    z-index: 3;
+    background: rgba(0,0,0,0.7);
+    width: 100vw;
+    height: 100vh;
+}
+.deleteModalWindow button {
+    margin: 20px;
+    font-size: 30px;
+    padding: 10px;
+    background-color: var(--ubuntuLightGray);
+    border-radius: 20px;
+    border: none;
+}
+.deleteModalWindow button:hover {
+    transform: scale(1.2);
+    background-color: white;
+}
+@keyframes slideDown {
+    0% {
+        opacity: 0;
+        top: 25%;
+    }
+    100% {
+        opacity: 1;
+    }
+}
